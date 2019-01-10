@@ -14,8 +14,11 @@
             :class="index === key ? 'active' : ''">{{item}}</text>
     </div>
     <router-view></router-view>
-    <buy v-if="isShow"
-         @click="show,cancel"></buy>
+    <transition name="fade">
+      <buy v-if="isShow"
+           @click="show,cancel">
+      </buy>
+    </transition>
   </div>
 </template>
 
@@ -50,11 +53,11 @@ export default {
   created () {
     EventBus.$on('cancel', (a) => {
       this.isShow = a
-      // console.log(this.isShow,a) //false false
+      // console.log(this.isShow, a) // false false
     })
     EventBus.$on('show', (b) => {
       this.isShow = b
-      // console.log(this.isShow,b) //true true
+      // console.log(this.isShow, b) // true true
     })
   }
 }
@@ -103,5 +106,13 @@ export default {
 .active {
   color: rgba(8, 117, 209, 1);
   border-bottom: 4px solid rgba(8, 117, 209, 1);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

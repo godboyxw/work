@@ -4,11 +4,11 @@
       <text class="text">{{txt}}</text>
     </div>
     <Mortal class="mortal"
-            v-if="arr"
             :arr="arr"
             :isShow="isShow"
             :numSlice="numSlice"
-            :router="router"></Mortal>
+            :router="router">
+    </Mortal>
     <div class="tab">
       <router-link to="/"><text class="txt active">举办方</text></router-link>
       <router-link to="/display"><text class="txt">参展商</text></router-link>
@@ -91,14 +91,22 @@ export default {
   );
 }
 .text {
-  width: 750px;
+  /*width: 750px;
   line-height: 40px;
   font-size: 36px;
   font-family: MicrosoftYaHei;
   font-weight: 400;
   color: #ffffff;
   padding-left: 24px;
-  padding-top: 72px;
+  padding-top: 72px;*/
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  font-size: 36px;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40px;
 }
 .mortal {
   margin: 0 auto;
@@ -109,10 +117,12 @@ export default {
 }
 .tab {
   width: 750px;
+  height: 96px;
   flex-direction: row;
   background: rgba(255, 255, 255, 1);
   position: fixed;
   bottom: 0;
+  z-index: 200;
 }
 .txt {
   width: 250px;
@@ -120,6 +130,10 @@ export default {
   line-height: 96px;
   flex: 1;
   text-align: center;
+  font-size: 28px;
+  font-family: "MicrosoftYaHei";
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
 }
 .active {
   color: red;

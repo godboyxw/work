@@ -2,27 +2,23 @@
   <div class="wrapper">
     <div class="content">
       <headerTop :title="title"
-                 :router="router">
-      </headerTop>
-      <slider class="banner"
-              interval="1300"
-              auto-play="true">
+                 :router="router"></headerTop>
+      <div class="banner">
         <div class="images"
              v-for="(item, index2) in images"
-             :key="index2">
+             :key="index2"
+             v-show="n === index2">
           <image :src="item"
                  style="width:660px;height:288px;" />
         </div>
-        <!-- <div class="banner-point">
+        <div class="banner-point">
           <div class="point"
                v-for="(item, index) in images"
                :key="index"
                :class="index===n?'active':''"
-               @click="to(index)">
-          </div> -->
-        <!-- </div> -->
-        <indicator class="indicator"></indicator>
-      </slider>
+               @click="to(index)"></div>
+        </div>
+      </div>
       <div class="desc"><text class="desc_text">索尼a5100相机（含15-45mm镜头）</text></div>
       <div class="detail"><text class="detail_text">产品详情</text></div>
       <div class="info">
@@ -103,26 +99,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.slider {
-  margin-top: 25px;
-  margin-left: 25px;
-  width: 700px;
-  height: 700px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #41b883;
-}
-.indicator {
-  width: 138px;
-  height: 700px;
-  item-color: rgba(229, 229, 229, 1);
-  item-selected-color: rgba(144, 218, 203, 1);
-  item-size: 12px;
-  position: absolute;
-  left: 306px;
-  top: 18px;
-}
-/* .banner-point {
+.banner-point {
   flex-direction: row;
   position: absolute;
   justify-content: space-between;
@@ -135,7 +112,7 @@ export default {
   height: 12px;
   background: rgba(229, 229, 229, 1);
   border-radius: 50%;
-} */
+}
 .active {
   background: rgba(144, 218, 203, 1);
 }

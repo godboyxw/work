@@ -9,11 +9,15 @@
       </div>
       <text class="dial">拨打</text>
     </div>
-    <text class="info">请输入详细的问题和意见</text>
-    <div class="desc">
+    <!-- <textarea class="info">请输入详细的问题和意见</textarea> -->
+    <input type="text"
+           placeholder="请输入详细的问题和意见"
+           class="info" />
+    <richtext class="desc">
       <text class="desc-text">请输入不少于十个字的描述</text>
+      <textarea style="width:100%;height:100%;"></textarea>
       <text class="desc-word-limit">0/300</text>
-    </div>
+    </richtext>
     <div class="photo">
       <text class="photo-text">请提供相关问题截图或者照片</text>
       <div class="send">
@@ -99,6 +103,7 @@ export default {
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
+  outline: none;
 }
 .desc {
   width: 750px;

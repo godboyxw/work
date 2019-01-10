@@ -195,9 +195,6 @@ const weexConfig = {
       '@': helper.resolve('src')
     }
   },
-  externals: {
-    'BMap': 'BMap'
-  },
   /*
    * Options affecting the resolving of modules.
    *

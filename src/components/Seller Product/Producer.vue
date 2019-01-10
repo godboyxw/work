@@ -35,7 +35,6 @@
               :class="key===index? 'active':''"
               class="txt">{{item}}</text>
       </div>
-
       <router-view></router-view>
     </div>
     <div class="map_menu">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mortal">
     <div class='container'
          v-if="display1">
       <div class="icon"
@@ -14,12 +14,12 @@
         <text class="text1">{{item}}</text>
       </div>
       <div class="bnt"
-           v-if="arr.length > 9"
-           v-show="isShow">
-        <div class="bnt1"
-             @click="show"></div>
-        <div class="bnt2"
-             @click="show"></div>
+           v-if="arr.length > 9 && isShow">
+        <div class="bnt-l">
+        </div>
+        <div class="bnt-s"
+             @click="right">
+        </div>
       </div>
     </div>
     <div class='container'
@@ -36,10 +36,9 @@
         <text class="text1">{{item}}</text>
       </div>
       <div class="bnt">
-        <div class="bnt1"
-             @click="show"></div>
-        <div class="bnt2"
-             @click="show"></div>
+        <div class="bnt-s bnt-2"
+             @click="left"></div>
+        <div class="bnt-l "></div>
       </div>
     </div>
   </div>
@@ -78,9 +77,13 @@ export default {
     this.arrSlice2 = this.arr.slice(this.numSlice, this.arr.length)
   },
   methods: {
-    show () {
-      this.display1 = !this.display1
-      this.display2 = !this.display2
+    left () {
+      this.display1 = true
+      this.display2 = false
+    },
+    right () {
+      this.display1 = false
+      this.display2 = true
     },
     jump (index, router) {
       this.$router.push(router[index])
@@ -116,18 +119,22 @@ export default {
   left: 350px;
   flex-direction: row;
 }
-.bnt1 {
+.bnt-l {
   width: 20px;
   height: 10px;
   background: rgba(95, 67, 220, 1);
   border-radius: 5px;
 }
-.bnt2 {
+.bnt-s {
   width: 10px;
   height: 10px;
   background: rgba(98, 162, 252, 1);
   border-radius: 50%;
   margin-left: 10px;
+}
+.bnt-2 {
+  margin-right: 10px;
+  margin-left: 0;
 }
 .icon {
   width: 33.33%;

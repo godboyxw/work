@@ -42,33 +42,36 @@
             {{item}}
           </div>
         </div>
-        <div class="metro transport"
-             v-show="key === 0">
-          <div class="metro-road transport-road"
-               v-for="(item,index) in metro"
-               :key="index">
-            <div class="metro-road-container transport-road-container">
-              <text class="metro-road-point transport-road-point"></text>
-              <text class="metro-road-title transport-road-title">{{item.title}}</text>
+        <transition name="fade">
+          <div class="metro transport"
+               v-show="key === 0">
+            <div class="metro-road transport-road"
+                 v-for="(item,index) in metro"
+                 :key="index">
+              <div class="metro-road-container transport-road-container">
+                <text class="metro-road-point transport-road-point"></text>
+                <text class="metro-road-title transport-road-title">{{item.title}}</text>
+              </div>
+              <text class="metro-road-content transport-road-content">{{item.content}}</text>
             </div>
-            <text class="metro-road-content transport-road-content">{{item.content}}</text>
           </div>
-        </div>
-        <div class="airport transport"
-             v-show="key === 2">
-          <div class="airport-road"
-               v-for="(item,index) in airport"
-               :key="index">
-            <div class="airport-road-container transport-road-container">
-              <text class="airport-road-point transport-road-point"></text>
-              <text class="airport-road-title transport-road-title">{{item.title}}</text>
+        </transition>
+        <transition name="fade">
+          <div class="airport transport"
+               v-show="key === 2">
+            <div class="airport-road"
+                 v-for="(item,index) in airport"
+                 :key="index">
+              <div class="airport-road-container transport-road-container">
+                <text class="airport-road-point transport-road-point"></text>
+                <text class="airport-road-title transport-road-title">{{item.title}}</text>
+              </div>
+              <text class="airport-road-content transport-road-content">{{item.content}}</text>
+              <text class="airport-road-fees">{{item.fees}}</text>
             </div>
-            <text class="airport-road-content transport-road-content">{{item.content}}</text>
-            <text class="airport-road-fees">{{item.fees}}</text>
           </div>
-        </div>
+        </transition>
       </div>
-      <mapview></mapview>
     </div>
   </div>
 </template>
@@ -76,12 +79,10 @@
 <script>
 import headerTop from '../Common/headerTop'
 import nav from '../Common/Nav'
-import mapview from './bmap'
 export default {
   components: {
     headerTop,
-    nav,
-    mapview
+    nav
   },
   data () {
     return {
@@ -108,7 +109,6 @@ export default {
       ],
       isShow: false,
       addClass: false
-
     }
   },
   methods: {
@@ -118,43 +118,34 @@ export default {
     transfer () {
       this.addClass = !this.addClass
     }
-    // loadBMapScript () {
-    //   let script = document.createElement('script')
-    //   script.src = 'http://api.map.baidu.com/api?v=2.0&ak=qPGK6hIUCFIjlCbRkiB3pGotWwP22WwP&callback=initialize'
-    //   document.body.appendChild(script)
-    // },
-    // qeuryLocation () {
-    //   var map = new window.BMap.Map('allmap') // 创建Map实例
-    //   map.centerAndZoom(new window.BMap.Point(116.404, 39.915), 11) // 初始化地图,设置中心点坐标和地图级别
-    //   map.setCurrentCity('北京') // 设置地图显示的城市 此项是必须设置的
-    //   map.enableScrollWheelZoom(true) // 开启鼠标滚轮缩放
-    // }
   }
-  // mounted () {
-  //   this.loadBMapScript()
-  //   window['bMapInit'] = () => {
-  //     this.qeuryLocation()
-  //   }
-  // }
 }
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 .transportation {
   width: 750px;
   min-height: 100vh;
 }
 .rotate {
   transform: rotateY(180deg);
-  transition: transform 0.5 ease;
+  transition: transform 0.5s ease;
 }
 .translate-from {
   transform: translateY(61px);
-  transition: transform 0.5 ease;
+  transition: transform 0.5s ease;
 }
 .translate-to {
   transform: translateY(-61px);
-  transition: transform 0.5 ease;
+  transition: transform 0.5s ease;
 }
 .search {
   width: 750px;
@@ -193,6 +184,7 @@ export default {
   background: rgba(225, 225, 225, 1);
 }
 .from {
+  transition: transform 0.5s ease;
   flex: 1;
   font-size: 28px;
   line-height: 26px;
@@ -202,6 +194,7 @@ export default {
   color: rgba(51, 51, 51, 1);
 }
 .to {
+  transition: transform 0.5s ease;
   flex: 1;
   font-size: 28px;
   line-height: 28px;
@@ -217,6 +210,7 @@ export default {
 }
 .icon-road {
   margin: 0 30px 0 29px;
+  transition: transform 0.5s ease;
 }
 .text {
   font-size: 28px;
