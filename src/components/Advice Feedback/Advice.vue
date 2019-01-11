@@ -13,11 +13,11 @@
     <input type="text"
            placeholder="请输入详细的问题和意见"
            class="info" />
-    <richtext class="desc">
+    <div class="desc">
       <text class="desc-text">请输入不少于十个字的描述</text>
       <textarea style="width:100%;height:100%;"></textarea>
       <text class="desc-word-limit">0/300</text>
-    </richtext>
+    </div>
     <div class="photo">
       <text class="photo-text">请提供相关问题截图或者照片</text>
       <div class="send">

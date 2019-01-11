@@ -18,6 +18,7 @@ import others from '@/components/Exhibition Rental/others'
 
 import shopping from '@/components/Shopping Cart/shopping'
 import order from '@/components/Shopping Cart/order'
+import Pay from '@/components/Shopping Cart/Pay'
 
 import food from '@/components/Food Order/food'
 import dish from '@/components/Food Order/dish'
@@ -111,9 +112,14 @@ module.exports = new Router({
     component: shopping
   },
   {
-    path: '/order',
+    path: '/shopping/order',
     name: 'order',
     component: order
+  },
+  {
+    path: '/shopping/order/pay',
+    name: 'Pay',
+    component: Pay
   },
   {
     path: '/food',

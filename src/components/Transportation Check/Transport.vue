@@ -10,28 +10,43 @@
       <div class="location">
         <div class="location-from">
           <text class="point1"></text>
-          <text class="from"
-                :class="addClass? 'translate-from':''">我的位置</text>
+          <!-- <text class="from"
+                :class="addClass? 'translate-from':''">我的位置
+          </text>-->
+          <input type="text"
+                 class="from"
+                 :class="addClass? 'translate-from':''"
+                 v-model="from"
+                 @focus="focusFrom"
+                 ref="input1" />
         </div>
         <div class="line"></div>
         <div class="location-to">
           <text class="point2"></text>
-          <text class="to"
-                :class="addClass? 'translate-to':''">6号线 国博中心南</text>
+          <!--<text class="to"
+                :class="addClass? 'translate-to':''">6号线 国博中心南
+          </text>-->
+          <input type="text"
+                 class="to"
+                 :class="addClass? 'translate-to':''"
+                 v-model="to"
+                 @focus="focusTo" />
         </div>
       </div>
       <div class="icon">
         <div class="icon-road"
              :class="addClass? 'rotate':''"
              :style="{fontFamily:'iconfont',color:'#000',fontSize:'37px'}"
-             @click="transfer">{{"\ue626"}}
+             @click="exchange">{{"\ue626"}}
         </div>
-        <text class="text">搜索</text>
+        <text class="text"
+              @click="search">搜索</text>
       </div>
     </div>
     <div class="map">
-      <image style="width:750px;height:463px"
-             src='https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58' />
+      <!--<image style="width:750px;height:463px"
+             src='https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1671204792,3567887483&fm=58' /> -->
+      <bMap></bMap>
       <div class="check">
         <div class="nav">
           <div v-for="(item, index) in nav"
@@ -79,10 +94,13 @@
 <script>
 import headerTop from '../Common/headerTop'
 import nav from '../Common/Nav'
+import bMap from './bMap'
+import { routeSearch } from '../../util/map.js'
 export default {
   components: {
     headerTop,
-    nav
+    nav,
+    bMap
   },
   data () {
     return {
@@ -108,15 +126,32 @@ export default {
         }
       ],
       isShow: false,
-      addClass: false
+      addClass: false,
+      from: '武汉市临空1号',
+      to: '6号线 国博中心南',
+      transfer: '',
+      value: ''
     }
   },
   methods: {
     jump (index) {
       this.key = index
     },
-    transfer () {
+    exchange () {
       this.addClass = !this.addClass
+      this.transfer = this.from
+      this.from = this.to
+      this.to = this.transfer
+    },
+    search () {
+      routeSearch(this.from, this.to)
+    },
+    focusFrom () {
+      // this.$refs['input1'].value = ''
+      this.from = ''
+    },
+    focusTo () {
+      this.to = ''
     }
   }
 }
@@ -139,14 +174,14 @@ export default {
   transform: rotateY(180deg);
   transition: transform 0.5s ease;
 }
-.translate-from {
+/*.translate-from {
   transform: translateY(61px);
   transition: transform 0.5s ease;
 }
 .translate-to {
   transform: translateY(-61px);
   transition: transform 0.5s ease;
-}
+}*/
 .search {
   width: 750px;
   height: 160px;
@@ -186,22 +221,28 @@ export default {
 .from {
   transition: transform 0.5s ease;
   flex: 1;
+  height: 40px;
+  margin-bottom: 5px;
   font-size: 28px;
   line-height: 26px;
   padding-bottom: 18px;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  outline: none;
 }
 .to {
   transition: transform 0.5s ease;
   flex: 1;
+  height: 40px;
+  margin-top: 10px;
   font-size: 28px;
   line-height: 28px;
   padding: 16px 0 30px 0;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
+  outline: none;
 }
 .icon {
   flex-direction: row;

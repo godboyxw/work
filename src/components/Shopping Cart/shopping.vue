@@ -68,7 +68,7 @@ export default {
       this.$router.push('/tools')
     },
     jump () {
-      this.$router.push('/order')
+      this.$router.push('/shopping/order')
     }
   }
 }

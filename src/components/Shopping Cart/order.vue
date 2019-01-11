@@ -23,7 +23,8 @@
         </div>
       </div>
       <div class="footer">
-        <text class="submit">提交订单</text>
+        <text class="submit"
+              @click="submit">提交订单</text>
       </div>
     </div>
   </div>
@@ -44,6 +45,9 @@ export default {
   methods: {
     back () {
       this.$router.push('/shopping')
+    },
+    submit () {
+      this.$router.push('/shopping/order/pay')
     }
   }
 }
