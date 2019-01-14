@@ -222,9 +222,11 @@ export default {
   transition: transform 0.5s ease;
   flex: 1;
   height: 40px;
+  margin-top: 5px;
   margin-bottom: 5px;
   font-size: 28px;
-  line-height: 26px;
+  line-height: 28px;
+  padding-top: 10px;
   padding-bottom: 18px;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;

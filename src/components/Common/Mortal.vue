@@ -14,7 +14,8 @@
         <text class="text1">{{item}}</text>
       </div>
       <div class="bnt"
-           v-if="arr.length > 9 && isShow">
+           v-if="arr.length > 9 && isShow"
+           @click="right">
         <div class="bnt-l">
         </div>
         <div class="bnt-s"
@@ -38,7 +39,8 @@
       <div class="bnt">
         <div class="bnt-s bnt-2"
              @click="left"></div>
-        <div class="bnt-l "></div>
+        <div class="bnt-l "
+             @click="left"></div>
       </div>
     </div>
   </div>
@@ -77,13 +79,13 @@ export default {
     this.arrSlice2 = this.arr.slice(this.numSlice, this.arr.length)
   },
   methods: {
-    left () {
-      this.display1 = true
-      this.display2 = false
-    },
     right () {
       this.display1 = false
       this.display2 = true
+    },
+    left () {
+      this.display1 = true
+      this.display2 = false
     },
     jump (index, router) {
       this.$router.push(router[index])

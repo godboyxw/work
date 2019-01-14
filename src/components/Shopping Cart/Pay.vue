@@ -27,9 +27,9 @@
           <text class="pay1">{{item.payWay}}</text>
           <text class="pay2">{{item.payWay}}</text>
         </div>
-        <text class="icon-choosen"
-              :style="{fontFamily:'iconfont',color:'#0875D1',fontSize:'30px'}">{{key === index ? '\ue620' : '\ue623'}}
-        </text>
+        <div class="icon-choosen"
+             :style="{fontFamily:'iconfont',color:'#0875D1',fontSize:'30px',alignSelf:'center'}">{{key === index ? '\ue620' : '\ue623'}}
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -62,7 +62,7 @@ export default {
         {
           payWay: '银联快捷支付',
           fontName: '\ue628',
-          color: ''
+          color: '#004888'
         }
       ],
       key: 0
@@ -146,9 +146,6 @@ export default {
   font-family: SourceHanSansCN-Light;
   font-weight: 300;
   color: rgba(187, 187, 187, 1);
-}
-.icon-choosen {
-  align-self: center;
 }
 .footer {
   width: 720px;
