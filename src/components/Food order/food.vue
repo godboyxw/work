@@ -70,6 +70,9 @@ export default {
 </script>
 
 <style scoped>
+.food {
+  width: 750px;
+}
 .content {
   border-top: 22px solid #eeeeee;
 }

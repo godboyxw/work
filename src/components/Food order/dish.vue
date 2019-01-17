@@ -73,6 +73,9 @@ export default {
 </script>
 
 <style scoped>
+.dish {
+  width: 750px;
+}
 .content {
   padding-top: 36px;
   border-top: 6px solid #fafafa;

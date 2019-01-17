@@ -2,6 +2,19 @@
 import Router from 'vue-router'
 import Home from '@/components/Home Page/Home'
 import Display from '@/components/Home Page/Display'
+
+import Servicer from '@/components/Role/Servicer/Servicer'
+import ServicerInternet from '@/components/Role/Servicer/Internet'
+import ServicerWater from '@/components/Role/Servicer/Water'
+import ServicerWaterFillOrder from '@/components/Role/Servicer/fillOrder'
+import Host from '@/components/Role/Host/Host'
+import Exhibitor from '@/components/Role/Exhibitor/Exhibitor'
+import ExhibitorExpress from '@/components/Role/Exhibitor/Express'
+import ExhibitorAdsRent from '@/components/Role/Exhibitor/AdsRent'
+import ExhibitorMeetingOrder from '@/components/Role/Exhibitor/MeetingOrder'
+import Builder from '@/components/Role/Builder/Builder'
+import BuilderExpress from '@/components/Role/Builder/Express'
+
 import Service from '@/components/Home Page/Service'
 
 import Producer from '@/components/Seller Product/Producer'
@@ -51,6 +64,61 @@ module.exports = new Router({
     path: '/service',
     name: 'Service',
     component: Service
+  },
+  {
+    path: '/servicer',
+    name: 'Servicer',
+    component: Servicer
+  },
+  {
+    path: '/servicer/internet',
+    name: 'ServicerInternet',
+    component: ServicerInternet
+  },
+  {
+    path: '/servicer/water',
+    name: 'ServicerWater',
+    component: ServicerWater
+  },
+  {
+    path: '/servicer/water/fillOrder',
+    name: 'ServicerWaterFillOrder',
+    component: ServicerWaterFillOrder
+  },
+  {
+    path: '/host',
+    name: 'Host',
+    component: Host
+  },
+  {
+    path: '/exhibitor',
+    name: 'Exhibitor',
+    component: Exhibitor
+  },
+  {
+    path: '/exhibitor/express',
+    name: 'ExhibitorExpress',
+    component: ExhibitorExpress
+  },
+  {
+    path: '/exhibitor/adsRent',
+    name: 'ExhibitorAdsRent',
+    component: ExhibitorAdsRent
+  },
+  {
+    path: '/exhibitor/meetingorder',
+    name: 'ExhibitorMeetingOrder',
+    component: ExhibitorMeetingOrder
+  },
+  {
+    path: '/builder',
+    name: 'Builder',
+    component: Builder
+  },
+  {
+    path: '/builder/express',
+    name: 'BuilderExpress',
+    component: BuilderExpress
   },
   {
     path: '/producer',

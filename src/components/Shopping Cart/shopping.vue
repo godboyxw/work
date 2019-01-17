@@ -84,9 +84,6 @@ export default {
 .content {
   flex: 1;
 }
-.content-cart {
-  /**margin-top:96px;**/
-}
 .footer {
   /** position: fixed;
     bottom:0;

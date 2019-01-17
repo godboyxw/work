@@ -6,14 +6,15 @@
       <div class="pay-time">
         <text class="rest-time">支付剩余时间</text>
         <div class="text-wrapper">
-          <text class="text">1</text>
+          <!--<text class="text">1</text>
           <text class="text">4</text>
           <text class="dot">:</text>
           <text class="text">4</text>
           <text class="text">7</text>
           <text class="dot">:</text>
           <text class="text">3</text>
-          <text class="text">1</text>
+          <text class="text2">{{time}}</text>-->
+          <countDown></countDown>
         </div>
       </div>
       <div class="pay-wrapper"
@@ -39,10 +40,13 @@
 </template>
 
 <script>
+// import { countDown } from '../../util/time.js'
 import headerTop from '../Common/headerTop'
+import countDown from './countDown'
 export default {
   components: {
-    headerTop
+    headerTop,
+    countDown
   },
   data () {
     return {
@@ -61,11 +65,12 @@ export default {
         },
         {
           payWay: '银联快捷支付',
-          fontName: '\ue628',
-          color: '#004888'
+          fontName: '\ue62a',
+          color: '#DE3232'
         }
       ],
-      key: 0
+      key: 0,
+      time: ''
     }
   },
   methods: {
@@ -73,6 +78,9 @@ export default {
       this.key = index
     }
   }
+  // mounted () {
+  //   this.time = countDown()
+  // }
 }
 </script>
 
@@ -102,7 +110,7 @@ export default {
   color: rgba(255, 255, 255, 1);
   line-height: 40px;
 }
-.text-wrapper {
+/**.text-wrapper {
   flex-direction: row;
 }
 .text {
@@ -122,7 +130,7 @@ export default {
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
   line-height: 40px;
-}
+}**/
 .pay-wrapper {
   width: 750px;
   height: 100px;

@@ -4,7 +4,7 @@
                :router='router'></headerTop>
     <div class="avatar">
       <image style="width:750px;height:360px;"
-             src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1785607224.jpg" />
+             src="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=2150984817,300747670&fm=85&s=2A024C859009FCEE31A97D810300F092" />
     </div>
     <div class="nav">
       <text class="text-nav"
@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       title: '展具租赁',
-      router: '/',
+      router: '/builder',
       nav: ['桌椅', '绿植', '消防', '其他'],
       routers: ['/desk', 'plants', 'fireforce', 'others'],
       key: 0,

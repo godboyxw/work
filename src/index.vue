@@ -1,9 +1,10 @@
 <template>
   <div class="wrapper">
-    <transition name="fade"
+    <!-- <transition name="fade"
                 mode="out-in">
       <router-view />
-    </transition>
+    </transition> -->
+    <router-view />
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
     var domModule = weex.requireModule('dom')
     domModule.addRule('fontFace', {
       'fontFamily': 'iconfont',
-      'src': "url('//at.alicdn.com/t/font_952444_7uu1r12t1d2.ttf')"
+      'src': "url('//at.alicdn.com/t/font_952444_f81g9fr7f9.ttf')"
     })
     domModule.addRule('fontFace', {
       'fontFamily': 'SourceHanSansCN-Medium',

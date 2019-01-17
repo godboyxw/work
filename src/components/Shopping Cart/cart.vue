@@ -108,7 +108,6 @@ export default {
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(187, 187, 187, 1);
-  line-height: 20px;
 }
 .calc {
   flex-direction: row;
