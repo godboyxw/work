@@ -23,7 +23,8 @@
     <div class="main">
       <div class="item"
            v-for="(item,index) in mainArr "
-           :key="index">
+           :key="index"
+           @click="jumpTo(index)">
         <div class="item-wrapper"
              :style="{'backgroundColor':item.backgroundColor}"><text :style="{fontFamily:'iconfont',fontSize:'45px',color:'#ffffff'}">{{item.fontName}}</text></div>
         <text class="item-text">{{item.txt}}</text>
@@ -65,7 +66,13 @@ export default {
           txt: '建议与投诉',
           backgroundColor: 'rgba(144,200,104,1)'
         }
-      ]
+      ],
+      nextRouter: ['/host/order', '/host/finance', '']
+    }
+  },
+  methods: {
+    jumpTo (index) {
+      this.$router.push(this.nextRouter[index])
     }
   }
 }

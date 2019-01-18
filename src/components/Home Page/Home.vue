@@ -154,7 +154,7 @@ export default {
           'txt': '搭建商'
         }
       ],
-      router1: ['/servicer', '/host', '/exhibitor', '/builder'],
+      router1: ['/host', '/servicer', '/exhibitor', '/builder'],
       router2: ['/producer', '/tickets', '/food', '', '', '/transport', '', '', '/advice', ''],
       router3: ['/news', ''],
       key: ''

@@ -7,7 +7,11 @@ import Servicer from '@/components/Role/Servicer/Servicer'
 import ServicerInternet from '@/components/Role/Servicer/Internet'
 import ServicerWater from '@/components/Role/Servicer/Water'
 import ServicerWaterFillOrder from '@/components/Role/Servicer/fillOrder'
+import ServicerFinance from '@/components/Role/Servicer/Finance'
+import ServicerFinanceBill from '@/components/Role/Servicer/Bill'
 import Host from '@/components/Role/Host/Host'
+import HostFinance from '@/components/Role/Host/Finance'
+import HostOrder from '@/components/Role/Host/Order'
 import Exhibitor from '@/components/Role/Exhibitor/Exhibitor'
 import ExhibitorExpress from '@/components/Role/Exhibitor/Express'
 import ExhibitorAdsRent from '@/components/Role/Exhibitor/AdsRent'
@@ -86,9 +90,29 @@ module.exports = new Router({
     component: ServicerWaterFillOrder
   },
   {
+    path: '/servicer/finance',
+    name: 'ServicerFinance',
+    component: ServicerFinance
+  },
+  {
+    path: '/servicer/finance/bill',
+    name: 'ServicerFinanceBill',
+    component: ServicerFinanceBill
+  },
+  {
     path: '/host',
     name: 'Host',
     component: Host
+  },
+  {
+    path: '/host/finance',
+    name: 'HostFinance',
+    component: HostFinance
+  },
+  {
+    path: '/host/order',
+    name: 'HostOrder',
+    component: HostOrder
   },
   {
     path: '/exhibitor',
