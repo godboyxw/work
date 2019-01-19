@@ -87,7 +87,7 @@ export default {
           backgroundColor: 'rgba(253,163,43,1)'
         }
       ],
-      nextRouter: ['/exhibitor/express', '/tools', '/exhibitor/adsRent', '/exhibitor/meetingorder', '', '', '']
+      nextRouter: ['/exhibitor/express', '', '/exhibitor/adsRent', '/exhibitor/meetingorder', '', '', '']
     }
   },
   methods: {

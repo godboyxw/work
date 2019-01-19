@@ -18,8 +18,8 @@
                :key='index'
                @click="jumpTo1(index)"
                class='item1'>
-            <image class='img1'
-                   :src='item.img'></image>
+            <text class="icon"
+                  :style="{fontFamily:'iconfont',color:item.color,fontSize:'50px',marginBottom:'26px'}">{{item.fontName}}</text>
             <text class='txt1'>{{item.txt}}</text>
           </div>
         </div>
@@ -30,8 +30,8 @@
                :key='index'
                @click="jumpTo2(index)"
                class='item1'>
-            <image class='img1'
-                   :src='item.img'></image>
+            <text class="icon"
+                  :style="{fontFamily:'iconfont',color:item.color,fontSize:'50px',marginBottom:'26px'}">{{item.fontName}}</text>
             <text class='txt1'>{{item.txt}}</text>
           </div>
         </div>
@@ -42,8 +42,8 @@
                @click="roleTo(index)"
                class='item2'>
             <text class='txt2'>{{item.txt}}</text>
-            <image class='img2'
-                   :src='item.img'></image>
+            <text class="icon"
+                  :style="{fontFamily:'iconfont',color:item.color,fontSize:'30px'}">{{item.fontName}}</text>
           </div>
         </div>
       </div>
@@ -86,72 +86,88 @@ export default {
     return {
       descarr1: [
         {
-          'img': 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=745096747,3395666420&fm=27&gp=0.jpg',
-          'txt': '展会信息'
+          'fontName': '\ue658',
+          'txt': '展会信息',
+          color: '#F8A16C'
         },
         {
-          'img': 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=745096747,3395666420&fm=27&gp=0.jpg',
-          'txt': '展会门票'
+          'fontName': '\ue657',
+          'txt': '展会门票',
+          color: '#FF4A55'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '餐饮预订'
+          'fontName': '\ue654',
+          'txt': '餐饮预订',
+          color: '#AF58FD'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '展馆导航'
+          'fontName': '\ue650',
+          'txt': '展馆导航',
+          color: '#54E7BF'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '泊车寻车'
+          'fontName': '\ue656',
+          'txt': '泊车寻车',
+          color: '#5DE3C4'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '交通查询'
+          'fontName': '\ue655',
+          'txt': '交通查询',
+          color: '#46D2E9'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '行李托管'
+          'fontName': '\ue651',
+          'txt': '行李托管',
+          color: '#4ABBFD'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '旅游观光'
+          fontName: ' \ue652',
+          'txt': '旅游观光',
+          color: '#FDDF20'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '问题反馈'
+          'fontName': '\ue653',
+          'txt': '问题反馈',
+          color: '#FFBB68'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '更多'
+          fontName: '\ue64f',
+          txt: '更多',
+          color: '#C7763A'
         }
       ],
       descarr2: [
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '媒体资讯'
+          fontName: '\ue65a',
+          txt: '媒体资讯',
+          color: '#ff6666'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '返回'
+          fontName: '\ue659',
+          txt: '返回',
+          color: '#339999'
         }
       ],
       rolearr: [
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '主办方'
+          'fontName': '\ue65c',
+          'txt': '主办方',
+          'color': '#FFFFFF'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '主场'
+          'fontName': '\ue65d',
+          'txt': '主场',
+          'color': '#FFFFFF'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '参展商'
+          'fontName': '\ue65b',
+          'txt': '参展商',
+          'color': '#FFFFFF'
         },
         {
-          'img': 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1559121849,1979113738&fm=85&s=C7B839C51643035D9F1961B70300D000',
-          'txt': '搭建商'
+          'fontName': '\ue65e',
+          'txt': '搭建商',
+          'color': '#FFFFFF'
         }
       ],
       router1: ['/host', '/servicer', '/exhibitor', '/builder'],

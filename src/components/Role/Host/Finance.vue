@@ -30,12 +30,18 @@
       </div>
       <div class="refund">
         <div class="refund-title">
-          <text class="icon-earn"
-                :style="{fontFamily:'iconfont',color:item.color,fontSize:'50px',marginRight:'21px'}">{{item.fontName}}</text>
+          <div class="icon-wrapper"
+               :style="{backgroundColor:item.backgroundColor}">
+            <text class="icon-earn"
+                  :style="{fontFamily:'iconfont',color:'#FFFFFF',fontSize:'30px'}">{{item.fontName}}</text>
+          </div>
           <text class="refund-text">{{item.text}}</text>
-          <text class="refund-detail">查看详情</text>
-          <text class="icon-morethan"
-                :style="{fontFamily:'iconfont',color:'rgba(204,204,204,1)',fontSize:'25px'}">{{"\ue648"}}</text>
+          <div @click="seeDetail(index)"
+               class="click-wrapper">
+            <text class="refund-detail">查看详情</text>
+            <text class="icon-morethan"
+                  :style="{fontFamily:'iconfont',color:'#D8D8D8',fontSize:'25px'}">{{"\ue648"}}</text>
+          </div>
         </div>
         <div class="refund-info">
           <text class="money">{{item.money}}</text>
@@ -65,7 +71,7 @@ export default {
           money: '+￥10000.00',
           success: '退款成功',
           rent: '展具租赁押金（2019-01-10 10:40:20）',
-          color: '#108EE9'
+          backgroundColor: '#108EE9'
         },
         {
           time: '09:50',
@@ -74,15 +80,19 @@ export default {
           money: '￥18840.00',
           success: '付款成功',
           rent: '展具租赁（2019-01-08 09:49:20）',
-          color: '#E8551F'
+          backgroundColor: '#E8551F'
         }
       ],
-      isShow: false
+      isShow: false,
+      nextRouter: ['/servicer/finance/bill']
     }
   },
   methods: {
     pulldown () {
       this.isShow = !this.isShow
+    },
+    seeDetail (index) {
+      this.$router.push(this.nextRouter[index])
     }
   }
 }
@@ -207,6 +217,14 @@ export default {
   border-bottom: 1px solid rgba(229, 229, 229, 1);
   height: 90px;
 }
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 21px;
+}
 .refund-text {
   font-size: 30px;
   font-family: NotoSansHans-Medium;
@@ -220,6 +238,11 @@ export default {
   font-weight: 400;
   color: rgba(155, 155, 155, 1);
   margin-right: 19px;
+}
+.click-wrapper {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .refund-info {
   padding-top: 31px;

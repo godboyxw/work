@@ -11,6 +11,7 @@ import ServicerFinance from '@/components/Role/Servicer/Finance'
 import ServicerFinanceBill from '@/components/Role/Servicer/Bill'
 import Host from '@/components/Role/Host/Host'
 import HostFinance from '@/components/Role/Host/Finance'
+import HostFinanceBill from '@/components/Role/Host/Bill'
 import HostOrder from '@/components/Role/Host/Order'
 import Exhibitor from '@/components/Role/Exhibitor/Exhibitor'
 import ExhibitorExpress from '@/components/Role/Exhibitor/Express'
@@ -108,6 +109,11 @@ module.exports = new Router({
     path: '/host/finance',
     name: 'HostFinance',
     component: HostFinance
+  },
+  {
+    path: '/host/finance/bill',
+    name: 'HostFinanceBill',
+    component: HostFinanceBill
   },
   {
     path: '/host/order',

@@ -9,7 +9,34 @@
       <text class="icon-morethan"
             :style="{fontFamily:'iconfont',color:'#D8D8D8',fontSize:'15px'}">{{"\ue64c"}}</text>
     </div>
-    <div class="seat"></div>
+    <div class="seat">
+      <div class="row">
+        <text class="row-location"
+              v-for="(item,index) in placeArr"
+              :key="index">{{item.name}}</text>
+      </div>
+      <div class="column">
+        <text class="column-location"
+              v-for="(item,index) in 31"
+              :key="index">{{item}}</text>
+      </div>
+      <div class="square">
+        <div class="square-wrapper"
+             v-for="(item,index) in 31"
+             :key="index">
+          <text class="square-location"
+                v-for="(item,index) in 12"
+                :key="index"></text>
+        </div>
+      </div>
+      <text class="seat-date">日期</text>
+      <div class="status">
+        <div class="full-icon"></div>
+        <text class="full-text">满</text>
+        <div class="empty-icon"></div>
+        <text class="empty-text">空</text>
+      </div>
+    </div>
     <div class="info">
       <div class="item"
            v-for="(item,index) in infoArr"
@@ -35,7 +62,6 @@
           <text class="location"
                 v-for="(item,index) in placeArr"
                 :key="index"
-                :style="{backgroundColor:(isActive ? 'rgba(69, 152, 240, 1)' :'')}"
                 @click="chooseActive(item,index)"
                 :class="item.show ? 'isActive2' : ''">{{item.name}} </text>
         </div>
@@ -128,9 +154,7 @@ export default {
           show: false
         }
       ],
-      isActive: false,
-      num: '',
-      onoff: true
+      num: ''
     }
   },
   methods: {
@@ -138,32 +162,10 @@ export default {
       item.show = !item.show
     },
     selectAll () {
-      // this.filterArr = this.placeArr.filter((item, index) => (
-      //   item.show
-      // ))
-      // this.isActive = !this.isActive
       this.placeArr.forEach((item, index) => {
-        if (this.onoff) {
-          item.show = false
-          item.show = !item.show
-          this.onoff = false
-        } else {
-          item.show = true
-          item.show = !item.show
-          this.onoff = true
-        }
-      }
-      )
-
-      //   console.log(this.placeArr)
-      // }
+        item.show = true
+      })
     }
-    // watch: {
-    //   placeArr (u, v) {
-    //     this.placeArr = u
-    //     console.log(this.placeArr)
-    //   }
-    // }
   }
 }
 </script>
@@ -191,6 +193,7 @@ export default {
 }
 .date-wrapper {
   height: 90px;
+  border-top: 1px solid #eaeaea;
   flex-direction: row;
   padding: 0 23px 0 29px;
   align-items: center;
@@ -211,12 +214,129 @@ export default {
 }
 .seat {
   height: 614px;
+  padding-top: 19px;
+  position: relative;
   background: rgba(245, 245, 245, 1);
+}
+.row {
+  width: 629px;
+  height: 40px;
+  padding-left: 33px;
+  position: absolute;
+  top: 19px;
+  left: 81px;
+  background: rgba(191, 191, 191, 1);
+  border-radius: 20px;
+  flex-direction: row;
+  align-items: center;
+  overflow: scroll;
+}
+.row-location {
+  margin-right: 40px;
+  font-size: 28px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 1);
+}
+.row-location:last-child {
+  width: 67px;
+}
+.column {
+  width: 40px;
+  height: 485px;
+  padding-top: 35px;
+  position: absolute;
+  top: 61px;
+  left: 24px;
+  background: rgba(191, 191, 191, 1);
+  border-radius: 20px;
+  align-items: center;
+  overflow: scroll;
+}
+.column-location {
+  margin-bottom: 43px;
+  font-size: 32px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 1);
+}
+.square {
+  width: 597px;
+  height: 460px;
+  position: absolute;
+  top: 71px;
+  left: 105px;
+  flex-direction: row;
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+.square-wrapper {
+  width: 597px;
+  height: 52px;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+.square-location {
+  width: 51px;
+  height: 52px;
+  margin-right: 27px;
+  margin-bottom: 16px;
+  background: rgba(112, 179, 73, 1);
+  border-radius: 10px;
+}
+.seat-date {
+  position: absolute;
+  left: 19px;
+  bottom: 21px;
+  font-size: 24px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(52, 52, 52, 1);
+}
+.status {
+  width: 200px;
+  height: 52px;
+  padding-left: 27px;
+  position: absolute;
+  right: 13px;
+  bottom: 7px;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(229, 229, 229, 1);
+  border: 1px solid rgba(220, 220, 220, 1);
+  border-radius: 10px;
+}
+.full-icon {
+  width: 25px;
+  height: 26px;
+  margin-right: 11px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 4px;
+}
+.full-text {
+  margin-right: 37px;
+  font-size: 24px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(61, 61, 61, 1);
+}
+.empty-icon {
+  width: 25px;
+  height: 26px;
+  margin-right: 9px;
+  background: rgba(112, 179, 73, 1);
+  border-radius: 4px;
+}
+.empty-text {
+  font-size: 24px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(61, 61, 61, 1);
 }
 .info {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 1px 19px 2px rgba(53, 53, 53, 0.08);
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 }
 .item,
 .select {

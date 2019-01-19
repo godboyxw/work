@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       title: '展具租赁',
-      router: '/builder',
+      router: '/servicer',
       nav: ['桌椅', '绿植', '消防', '其他'],
       routers: ['/desk', 'plants', 'fireforce', 'others'],
       key: 0,

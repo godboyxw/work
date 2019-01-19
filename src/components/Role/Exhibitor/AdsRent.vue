@@ -17,45 +17,45 @@
         <text class="title">{{item.title}}</text>
         <div class="item-wrapper">
           <div class="item"
-               @click="choosen1(index,value)"
-               :class="index===num1&&value===num2? 'active' : ''"
+               @click="choosen1(key)"
+               :class="key.showActive? 'active' : ''"
                v-for="(key,value) in item.itemArr.slice(0,2)"
                :key="value">
             <text class="place"
-                  :class="index===num1&&value===num2? 'active' : ''">{{key.place}}</text>
+                  :class="key.showActive? 'active' : ''">{{key.place}}</text>
             <text class="scale"
-                  :class="index===num1&&value===num2? 'active' : ''"
+                  :class="key.showActive? 'active' : ''"
                   v-html="key.scale"></text>
             <text class="pub-fee">{{key.pubFee}}</text>
             <text class="ins-fee">{{key.insFee}}</text>
             <text class="bui-fee">{{key.buiFee}}</text>
             <div class="icon-choosen"
-                 v-if="index===num1&&value===num2"
+                 v-if="key.showActive"
                  :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
             </div>
           </div>
           <div class="item"
-               v-show="showItem  && index===num3"
-               @click="choosen2(index,value)"
-               :class="index===num1&&value===num2? 'active' : ''"
+               v-show="item.showItem"
+               @click="choosen2(key)"
+               :class="key.showActive? 'active' : ''"
                :key=""
                v-for="(key,value) in item.itemArr.slice(2,item.itemArr.length)">
             <text class="place"
-                  :class="index===num1&&value===num2? 'active' : ''">{{key.place}}</text>
+                  :class="key.showActive? 'active' : ''">{{key.place}}</text>
             <text class="scale"
-                  :class="index===num1&&value===num2? 'active' : ''"
+                  :class="key.showActive? 'active' : ''"
                   v-html="key.scale"></text>
             <text class="pub-fee">{{key.pubFee}}</text>
             <text class="ins-fee">{{key.insFee}}</text>
             <text class="bui-fee">{{key.buiFee}}</text>
             <div class="icon-choosen"
-                 v-if="index===num1&&value===num2"
+                 v-if="key.showActive"
                  :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
             </div>
           </div>
           <div class="icon-more"
-               @click="more(index)"
-               :style="{fontFamily:'iconfont',color:'rgba(160,160,160,1)',fontSize:'30px',position:'absolute',left:'365px',bottom:'10px'}">{{showItem && index===num3?'\ue63d':'\ue63a'}}
+               @click="more(item,index)"
+               :style="{fontFamily:'iconfont',color:'rgba(160,160,160,1)',fontSize:'30px',position:'absolute',left:'365px',bottom:'10px'}">{{item.showItem?'\ue63d':'\ue63a'}}
           </div>
         </div>
       </div>
@@ -86,40 +86,47 @@ export default {
           itemArr: [
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             }
-          ]
+          ],
+          showItem: false
+
         },
         {
           title: '户外长期广告',
@@ -129,68 +136,82 @@ export default {
               scale: '5*2.2（幅）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '交通枢纽出入口墙面...',
-              scale: '10*5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '交通枢纽出入口墙面...',
-              scale: '10*5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             }
-          ]
+          ],
+          showItem: false
+
         },
         {
           title: '线上广告',
           itemArr: [
             {
               place: '微信日常推送广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             },
             {
               place: '掌上国博走马灯广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:12px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
-              buiFee: '桁梁租赁搭建费'
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
+            },
+            {
+              place: '掌上国博走马灯广告',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              pubFee: '场租发布费',
+              insFee: '制作安装费',
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
+            },
+            {
+              place: '掌上国博走马灯广告',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              pubFee: '场租发布费',
+              insFee: '制作安装费',
+              buiFee: '桁梁租赁搭建费',
+              showActive: false
             }
-          ]
+          ],
+          showItem: false
+
         }
       ],
-      sliceNum: 2,
-      num1: '',
-      num2: 0,
-      num3: '',
-      // fontName: '\ue63a',
-      showItem: false
+      sliceNum: 2
 
     }
   },
   methods: {
-    choosen1 (index, value) {
-      this.num1 = index
-      this.num2 = value
+    choosen1 (key) {
+      key.showActive = !key.showActive
     },
-    choosen2 (index, value) {
-      console.log(index, value)
-      this.num1 = index
-      this.num2 = value
+    choosen2 (key) {
+      key.showActive = !key.showActive
     },
-    more (index) {
-      this.num3 = index
-      // this.sliceNum = 4
-      // this.fontName = '\ue63d'
-      this.showItem = !this.showItem
+    more (item, index) {
+      item.showItem = !item.showItem
     }
   }
 }
