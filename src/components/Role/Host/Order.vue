@@ -12,8 +12,8 @@
     <div class="seat">
       <div class="row">
         <text class="row-location"
-              v-for="(item,index) in placeArr"
-              :key="index">{{item.name}}</text>
+              v-for="(item,index) in arr"
+              :key="index">{{item}}</text>
       </div>
       <div class="column">
         <text class="column-location"
@@ -104,6 +104,7 @@ export default {
       ],
       key: 0,
       isShow: false,
+      arr: ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6'],
       placeArr: [
         {
           name: 'A1',
@@ -153,8 +154,7 @@ export default {
           name: 'B6',
           show: false
         }
-      ],
-      num: ''
+      ]
     }
   },
   methods: {

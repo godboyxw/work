@@ -163,6 +163,7 @@ export default {
   font-weight: 400;
   color: rgba(64, 64, 64, 1);
   text-align: center;
+  line-height: 50px;
 }
 .file-content {
   font-size: 24px;
