@@ -10,7 +10,7 @@
                class='inp-text'
                placeholder='搜索展位、设施等' />
         <div class='iconfont icon-search'
-             :style="{fontFamily:'iconfont',color:'rgba(153,153,153,1)',fontSize:'30px',position: 'absolute',left: '92px',top: '-14px'}">{{"\ue615"}}
+             :style="{fontFamily:'iconfont',color:'rgba(153,153,153,1)',fontSize:'30px',position: 'absolute',left: '92px',top: '-18px'}">{{"\ue615"}}
         </div>
         <div class='entrance1'
              v-if="key!==9">

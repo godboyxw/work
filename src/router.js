@@ -9,10 +9,13 @@ import ServicerWater from '@/components/Role/Servicer/Water'
 import ServicerWaterFillOrder from '@/components/Role/Servicer/fillOrder'
 import ServicerFinance from '@/components/Role/Servicer/Finance'
 import ServicerFinanceBill from '@/components/Role/Servicer/Bill'
+import ServicerPark from '@/components/Role/Servicer/ParkFee'
+import ServicerParkDetails from '@/components/Role/Servicer/Details'
 import Host from '@/components/Role/Host/Host'
 import HostFinance from '@/components/Role/Host/Finance'
 import HostFinanceBill from '@/components/Role/Host/Bill'
 import HostOrder from '@/components/Role/Host/Order'
+import HostTest from '@/components/Role/Host/test'
 import Exhibitor from '@/components/Role/Exhibitor/Exhibitor'
 import ExhibitorExpress from '@/components/Role/Exhibitor/Express'
 import ExhibitorAdsRent from '@/components/Role/Exhibitor/AdsRent'
@@ -101,6 +104,16 @@ module.exports = new Router({
     component: ServicerFinanceBill
   },
   {
+    path: '/servicer/park',
+    name: 'ServicerPark',
+    component: ServicerPark
+  },
+  {
+    path: '/servicer/park/details',
+    name: 'ServicerParkDetails',
+    component: ServicerParkDetails
+  },
+  {
     path: '/host',
     name: 'Host',
     component: Host
@@ -119,6 +132,11 @@ module.exports = new Router({
     path: '/host/order',
     name: 'HostOrder',
     component: HostOrder
+  },
+  {
+    path: '/host/test',
+    name: 'HostTest',
+    component: HostTest
   },
   {
     path: '/exhibitor',

@@ -5,29 +5,29 @@
                  :router="router"></headerTop>
       <div class="main">
         <div class="item"
-             @click="choosen(index)"
-             :class="index===key?'active1':''"
+             @click="choosen(item)"
+             :class="item.isActive?'active1':''"
              v-for="(item,index) in intArr"
              :key="index">
           <div class="select-amount">
             <text class="amount"
-                  :class="index===key?'active1':''">{{item.amount}}</text>
+                  :class="item.isActive?'active1':''">{{item.amount}}</text>
             <text class="price"
-                  :class="index===key?'active2':''">价格</text>
+                  :class="item.isActive?'active2':''">价格</text>
             <div class="icon-choosen"
-                 v-if="index===key"
+                 v-if="item.isActive"
                  :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',right:'0',bottom:'0'}">{{"\ue63c"}}
             </div>
           </div>
           <div class="select-num">
             <text class="icon-minus"
-                  @click="minus(index)"
-                  :class="index===num1?'active3':''"
+                  @click="minus(item)"
+                  :class="item.isMinus?'active3':''"
                   :style="{fontFamily:'iconfont',color:'rgba(220,220,220,1)',fontSize:'30px',marginRight:'41px'}">{{"\ue642"}}</text>
-            <text class="last-num">0</text>
+            <text class="last-num">{{item.Num}}</text>
             <text class="icon-add"
-                  @click="add(index)"
-                  :class="index===num2?'active3':''"
+                  @click="add(item)"
+                  :class="item.isAdd?'active3':''"
                   :style="{fontFamily:'iconfont',color:'rgba(220,220,220,1)',fontSize:'30px',marginLeft:'41px'}">{{"\ue644"}}</text>
           </div>
         </div>
@@ -55,34 +55,71 @@ export default {
       router: '/servicer',
       intArr: [
         {
-          amount: '100M'
+          amount: '100M',
+          isActive: false,
+          isAdd: false,
+          isMinus: false,
+          Num: 0
         },
         {
-          amount: '150M'
+          amount: '150M',
+          isActive: false,
+          isAdd: false,
+          isMinus: false,
+          Num: 0
+
         },
         {
-          amount: '200M'
+          amount: '200M',
+          isActive: false,
+          isAdd: false,
+          isMinus: false,
+          Num: 0
         },
         {
-          amount: '300M'
+          amount: '300M',
+          isActive: false,
+          isAdd: false,
+          isMinus: false,
+          Num: 0
         }
-      ],
-      key: 0,
-      num1: 0,
-      num2: 0
+      ]
     }
   },
   methods: {
-    choosen (index) {
-      this.key = index
+    choosen (item) {
+      item.isActive = !item.isActive
     },
-    minus (index) {
-      this.num1 = index
+    minus (item) {
+      item.isActive = true
+      item.isMinus = true
+      item.Num--
+      if (item.Num <= 0) {
+        item.Num = 0
+        item.isActive = false
+        item.isAdd = false
+        item.isMinus = false
+      }
     },
-    add (index) {
-      this.num2 = index
+    add (item) {
+      item.isActive = true
+      item.isAdd = true
+      item.Num++
     }
   }
+  // watch: {
+  //   Num (u, v) {
+  //     u = u < 0 ? 0 : u
+  //     this.Num = u
+  //     if (this.Num === 0) {
+  //       this.intArr.forEach((item) => {
+  //         item.isActive = false
+  //         item.isAdd = false
+  //         item.isMinus = false
+  //       })
+  //     }
+  //   }
+  // }
 }
 </script>
 

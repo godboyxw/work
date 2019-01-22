@@ -82,7 +82,7 @@ export default {
           backgroundColor: 'rgba(144,200,104,1)'
         }
       ],
-      nextRouter: ['/servicer/finance', '', '/servicer/water', '/servicer/internet', '', '']
+      nextRouter: ['/servicer/finance', '', '/servicer/water', '/servicer/internet', '/servicer/park', '']
     }
   },
   methods: {

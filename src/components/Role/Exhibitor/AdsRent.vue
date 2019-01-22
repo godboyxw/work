@@ -16,65 +16,65 @@
            :key="index">
         <text class="title">{{item.title}}</text>
         <div class="item-wrapper">
-          <div class="item"
-               @click="choosen1(key)"
-               :class="key.showActive? 'active' : ''"
-               v-for="(key,value) in item.itemArr.slice(0,2)"
-               :key="value">
-            <text class="place"
-                  :class="key.showActive? 'active' : ''">{{key.place}}</text>
-            <text class="scale"
-                  :class="key.showActive? 'active' : ''"
-                  v-html="key.scale"></text>
-            <text class="pub-fee">{{key.pubFee}}</text>
-            <text class="ins-fee">{{key.insFee}}</text>
-            <text class="bui-fee">{{key.buiFee}}</text>
-            <div class="icon-choosen"
-                 v-if="key.showActive"
-                 :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
+          <div class="item-container">
+            <div class="item"
+                 @click="choosen1(key)"
+                 :class="key.showActive? 'active' : ''"
+                 v-for="(key,value) in item.itemArr.slice(0,2)"
+                 :key="value">
+              <text class="place"
+                    :class="key.showActive? 'active' : ''">{{key.place}}</text>
+              <text class="scale"
+                    :class="key.showActive? 'active' : ''"
+                    v-html="key.scale"></text>
+              <text class="pub-fee">{{key.pubFee}}</text>
+              <text class="ins-fee">{{key.insFee}}</text>
+              <text class="bui-fee">{{key.buiFee}}</text>
+              <div class="icon-choosen"
+                   v-if="key.showActive"
+                   :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
+              </div>
             </div>
           </div>
-          <div class="item"
-               v-show="item.showItem"
-               @click="choosen2(key)"
-               :class="key.showActive? 'active' : ''"
-               :key=""
-               v-for="(key,value) in item.itemArr.slice(2,item.itemArr.length)">
-            <text class="place"
-                  :class="key.showActive? 'active' : ''">{{key.place}}</text>
-            <text class="scale"
-                  :class="key.showActive? 'active' : ''"
-                  v-html="key.scale"></text>
-            <text class="pub-fee">{{key.pubFee}}</text>
-            <text class="ins-fee">{{key.insFee}}</text>
-            <text class="bui-fee">{{key.buiFee}}</text>
-            <div class="icon-choosen"
-                 v-if="key.showActive"
-                 :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
+          <div class="item-container">
+            <div class="item"
+                 v-show="item.showItem"
+                 @click="choosen2(key)"
+                 :class="key.showActive? 'active' : ''"
+                 :key="value"
+                 v-for="(key,value) in item.itemArr.slice(2,item.itemArr.length)">
+              <text class="place"
+                    :class="key.showActive? 'active' : ''">{{key.place}}</text>
+              <text class="scale"
+                    :class="key.showActive? 'active' : ''"
+                    v-html="key.scale"></text>
+              <text class="pub-fee">{{key.pubFee}}</text>
+              <text class="ins-fee">{{key.insFee}}</text>
+              <text class="bui-fee">{{key.buiFee}}</text>
+              <div class="icon-choosen"
+                   v-if="key.showActive"
+                   :style="{fontFamily:'iconfont',color:'#4784C6',fontSize:'20px',position:'absolute',left:'295px',bottom:'-1px'}">{{"\ue63c"}}
+              </div>
             </div>
-          </div>
-          <div class="icon-more"
-               @click="more(item,index)"
-               :style="{fontFamily:'iconfont',color:'rgba(160,160,160,1)',fontSize:'30px',position:'absolute',left:'365px',bottom:'10px'}">{{item.showItem?'\ue63d':'\ue63a'}}
+            <div class="icon-more"
+                 @click="more(item,index)"
+                 :style="{fontFamily:'iconfont',color:'rgba(160,160,160,1)',fontSize:'30px',position:'absolute',left:'365px',bottom:'10px'}">{{item.showItem?'\ue63d':'\ue63a'}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="sum">
-        <text class="total">总价</text>
-        <text class="money">￥N</text>
-      </div>
-      <text class="pay-now">立即支付</text>
-    </div>
+    <footer></footer>
   </div>
 </template>
 
 <script>
 import headerTop from '../../Common/headerTop'
+import footer from '../../Common/Footer'
 export default {
   components: {
-    headerTop
+    headerTop,
+    footer
   },
   data () {
     return {
@@ -267,9 +267,13 @@ export default {
 }
 .item-wrapper {
   min-height: 329px;
-  padding: 30px 29px 0 29px;
-  position: relative;
+  padding-top: 30px;
   border-bottom: 20px solid rgba(238, 238, 238, 1);
+}
+.item-container {
+  width: 750px;
+  padding: 0px 29px 0 29px;
+  position: relative;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -308,49 +312,5 @@ export default {
   font-weight: 400;
   color: rgba(129, 129, 129, 1);
   line-height: 40px;
-}
-.footer {
-  width: 750px;
-  height: 96px;
-  flex: 0;
-  flex-direction: row;
-}
-.sum {
-  /**width: 71.6%;**/
-  flex: 1;
-  height: 96px;
-  background: rgba(47, 145, 255, 1);
-  flex-direction: row;
-  justify-content: center;
-}
-.total,
-.money {
-  font-family: MicrosoftYaHeiUI;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 1);
-  line-height: 96px;
-  text-align: center;
-}
-.total {
-  font-size: 30px;
-  margin-right: 58px;
-}
-.money {
-  font-size: 36px;
-}
-.pay-now {
-  width: 28.4%;
-  height: 96px;
-  background: rgba(71, 132, 198, 1);
-  text-align: center;
-  font-size: 36px;
-  font-family: DengXian;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 1);
-  line-height: 96px;
-}
-.active {
-  border-color: rgba(71, 132, 198, 1);
-  color: rgba(71, 132, 198, 1);
 }
 </style>

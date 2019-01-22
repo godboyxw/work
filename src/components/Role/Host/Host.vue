@@ -67,7 +67,7 @@ export default {
           backgroundColor: 'rgba(144,200,104,1)'
         }
       ],
-      nextRouter: ['/host/order', '/host/finance', '']
+      nextRouter: ['/host/order', '/host/finance', '/host/test']
     }
   },
   methods: {
