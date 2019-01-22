@@ -20,7 +20,7 @@
             @click="chooseChildIcon1"
             :class="isActiveIcon1? 'active3': ''"
             :style="{fontFamily:'iconfont',color:'rgba(220,220,220,1)',fontSize:'30px',marginRight:'41px'}">{{"\ue642"}}</text>
-      <text class="last-num">0</text>
+      <text class="last-num">{{Num}}</text>
       <text class="icon-add"
             @click="chooseChildIcon2"
             :class="isActiveIcon2? 'active3': ''"
@@ -41,7 +41,8 @@ export default {
     return {
       isActive: false,
       isActiveIcon1: false,
-      isActiveIcon2: false
+      isActiveIcon2: false,
+      Num: 0
     }
   },
   methods: {
@@ -49,10 +50,26 @@ export default {
       this.isActive = !this.isActive
     },
     chooseChildIcon1 () {
-      this.isActiveIcon1 = !this.isActiveIcon1
+      this.isActiveIcon1 = true
+      this.isActive = true
+      this.Num--
     },
     chooseChildIcon2 () {
-      this.isActiveIcon2 = !this.isActiveIcon2
+      this.isActiveIcon2 = true
+      this.isActive = true
+      this.Num++
+    }
+  },
+  watch: {
+    Num (u, v) {
+      // console.log(u)
+      u = u < 0 ? 0 : u
+      this.Num = u
+      if (this.Num === 0) {
+        this.isActiveIcon1 = false
+        this.isActiveIcon2 = false
+        this.isActive = false
+      }
     }
   }
 }
