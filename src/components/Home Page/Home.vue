@@ -10,7 +10,7 @@
                class='inp-text'
                placeholder='搜索展位、设施等' />
         <div class='iconfont icon-search'
-             :style="{fontFamily:'iconfont',color:'rgba(153,153,153,1)',fontSize:'40px',position: 'absolute',left: '82px',top: '-24px'}">{{"\ue615"}}
+             :style="{fontFamily:'iconfont',color:'rgba(153,153,153,1)',fontSize:'30px',position: 'absolute',left: '92px',top: '-14px'}">{{"\ue615"}}
         </div>
         <div class='entrance1'
              v-if="key!==9">
@@ -307,9 +307,10 @@ export default {
 .item2:nth-child(2) {
   background: linear-gradient(
     -58deg,
-    rgba(240, 150, 0, 0.8),
-    rgba(255, 197, 44, 0.8)
+    rgba(255, 231, 52, 1),
+    rgba(251, 211, 3, 1)
   );
+  border-radius: 10px;
 }
 .item2:nth-child(3) {
   background: linear-gradient(
@@ -321,8 +322,8 @@ export default {
 .item2:nth-child(4) {
   background: linear-gradient(
     -58deg,
-    rgba(34, 169, 255, 0.8),
-    rgba(23, 105, 253, 0.8)
+    rgba(0, 226, 238, 0.8),
+    rgba(53, 205, 248, 0.8)
   );
 }
 .txt2 {
