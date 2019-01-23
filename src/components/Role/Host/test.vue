@@ -1,61 +1,62 @@
 <template>
   <div class="wrapper">
-    <text class="title">Hello icepy</text>
-    <text class="subtitle"
+    <text class="title"
           v-on:click="getClick">{{ link }}</text>
+    <text class="subtitle">Hello icepy,i love your playground !!!</text>
   </div>
 </template>
 <script>
-
-var stream = weex.requireModule('stream')
-var modal = weex.requireModule('modal')
+// import { setRight, toast, setTitle, share } from './util.js'
+import utility from 'dingtalk-javascript-utility'
 var dingtalk = require('dingtalk-javascript-sdk')
-
+// import dingtalk from 'dingtalk-javascript-sdk'
 export default {
-  name: 'hello',
-  data: function () {
+  name: 'home',
+  data () {
     return {
-      link: 'DingTalk'
+      link: 'Going DingTalk Todo List Application'
     }
   },
-  mounted: function () {
-    dingtalk.ready(function () {
-      const dd = dingtalk.apis
-      // 设置导航
-      dd.biz.navigation.setTitle({
-        title: 'icepy'
-      })
-    })
+  created () {
+    const { env } = utility
+    console.log(env)
+  },
+  mounted () {
+    console.log(dingtalk)
+    // dingtalk.ready(function () {
+    //   const dd = dingtalk.apis
+    //   console.log(dd)
+    //   // 设置导航
+    //   dd.biz.navigation.setTitle({
+    //     title: 'icepy'
+    //   })
+    // })
   },
   methods: {
     getClick: function () {
-      modal.toast({
-        message: 'Hello World ICEPY !',
-        duration: 2
-      })
+      // this.$router.push('list')
     }
   }
 }
 </script>
-    <style>
+<style scoped>
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 750px;
-  height: 1000px;
-  background-color: #333377;
+  background-color: #f8f8f8;
 }
 .title {
   font-size: 60px;
+  width: 750px;
   color: #505050;
   text-align: center;
 }
 .subtitle {
-  display: block;
+  width: 750px;
   font-size: 30px;
   color: #aaaaaa;
-  xxxx: static;
   text-align: center;
   margin-top: 20px;
 }

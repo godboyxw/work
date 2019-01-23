@@ -86,7 +86,7 @@ export default {
           itemArr: [
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -94,7 +94,7 @@ export default {
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -102,7 +102,7 @@ export default {
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -110,7 +110,7 @@ export default {
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -118,7 +118,7 @@ export default {
             },
             {
               place: '登录厅正门两侧广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -141,7 +141,7 @@ export default {
             },
             {
               place: '交通枢纽出入口墙面...',
-              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -149,7 +149,7 @@ export default {
             },
             {
               place: '交通枢纽出入口墙面...',
-              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '10*5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -164,7 +164,7 @@ export default {
           itemArr: [
             {
               place: '微信日常推送广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -172,7 +172,7 @@ export default {
             },
             {
               place: '掌上国博走马灯广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -180,7 +180,7 @@ export default {
             },
             {
               place: '掌上国博走马灯广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -188,7 +188,7 @@ export default {
             },
             {
               place: '掌上国博走马灯广告',
-              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:rgba(129, 129, 129, 1);">2</sup>）',
+              scale: '16.5*7.5（m<sup class="sup" style="font-size:2px;font-family: SimHei;font-weight:400;color:inherit;">2</sup>）',
               pubFee: '场租发布费',
               insFee: '制作安装费',
               buiFee: '桁梁租赁搭建费',
@@ -312,5 +312,9 @@ export default {
   font-weight: 400;
   color: rgba(129, 129, 129, 1);
   line-height: 40px;
+}
+.active {
+  color: #4784c6 !important;
+  border-color: #4784c6;
 }
 </style>
