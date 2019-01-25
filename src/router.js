@@ -11,6 +11,7 @@ import ServicerFinance from '@/components/Role/Servicer/Finance'
 import ServicerFinanceBill from '@/components/Role/Servicer/Bill'
 import ServicerPark from '@/components/Role/Servicer/ParkFee'
 import ServicerParkDetails from '@/components/Role/Servicer/Details'
+import ServicerParkDetailsScan from '@/components/Role/Servicer/Scan'
 import Host from '@/components/Role/Host/Host'
 import HostFinance from '@/components/Role/Host/Finance'
 import HostFinanceBill from '@/components/Role/Host/Bill'
@@ -112,6 +113,11 @@ module.exports = new Router({
     path: '/servicer/park/details',
     name: 'ServicerParkDetails',
     component: ServicerParkDetails
+  },
+  {
+    path: '/servicer/park/details/scan',
+    name: 'ServicerParkDetailsScan',
+    component: ServicerParkDetailsScan
   },
   {
     path: '/host',

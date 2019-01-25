@@ -20,7 +20,7 @@ export default {
     var domModule = weex.requireModule('dom')
     domModule.addRule('fontFace', {
       'fontFamily': 'iconfont',
-      'src': "url('//at.alicdn.com/t/font_952444_nky74rreh28.ttf')"
+      'src': "url('//at.alicdn.com/t/font_952444_vz91kja5eoa.ttf')"
     })
     domModule.addRule('fontFace', {
       'fontFamily': 'SourceHanSansCN-Medium',

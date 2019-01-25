@@ -45,7 +45,8 @@
            @click="key=index">
         <text class="
            txt1">{{item.txt1}}</text>
-        <text class="txt2">{{item.txt2}}</text>
+        <text contenteditable="true"
+              class="txt2">{{item.txt2}}</text>
       </div>
     </div>
     <div class="select">
@@ -362,6 +363,9 @@ export default {
   font-family: SourceHanSansCN-Light;
   font-weight: 300;
   color: rgba(153, 153, 153, 1);
+}
+.txt2 {
+  outline: none;
 }
 .active {
   border-color: rgba(29, 141, 243, 1);
