@@ -6,10 +6,10 @@
       <div class="main">
         <div class="item"
              @click="choosen(item)"
-             :class="item.isActive?'active1':''"
              v-for="(item,index) in intArr"
              :key="index">
-          <div class="select-amount">
+          <div class="select-amount"
+               :class="item.isActive?'active1':''">
             <text class="amount"
                   :class="item.isActive?'active1':''">{{item.amount}}</text>
             <text class="price"
@@ -134,7 +134,7 @@ export default {
 .main {
   width: 750px;
   padding: 64px 20px 0 20px;
-  border-top: 4px solid #eee;
+  border-top: 8px solid #f8f8f8;
   flex-direction: row;
   flex-wrap: wrap;
 }

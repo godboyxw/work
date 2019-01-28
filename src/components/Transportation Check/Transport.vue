@@ -158,7 +158,7 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease;
 }
@@ -173,7 +173,7 @@ export default {
 .rotate {
   transform: rotateY(180deg);
   transition: transform 0.5s ease;
-}
+} */
 /*.translate-from {
   transform: translateY(61px);
   transition: transform 0.5s ease;

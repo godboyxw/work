@@ -13,8 +13,10 @@
     </div>
     <div class="know">
       <div class="know-wrapper">
-        <text class="know-text1">参展须知</text>
-        <text class="know-text2">请参展商仔细阅读相关规定</text>
+        <div @click="routerTo">
+          <text class="know-text1">参展须知</text>
+          <text class="know-text2">请参展商仔细阅读相关规定</text>
+        </div>
         <image class="know-image"
                src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1813348022,318740899&fm=85&app=57&f=JPEG?w=121&h=75&s=47917A8AE2882AEFAC81DDDD03005012'
                style="width:140px;height:130px;position:absolute;right:64px;bottom:0;" />
@@ -87,12 +89,15 @@ export default {
           backgroundColor: 'rgba(253,163,43,1)'
         }
       ],
-      nextRouter: ['/exhibitor/express', '', '/exhibitor/adsRent', '/exhibitor/meetingorder', '', '', '']
+      nextRouter: ['/exhibitor/express', '', '/exhibitor/adsRent', '/exhibitor/meetingorder', '', '/exhibitor/foodorder', '']
     }
   },
   methods: {
     push (index) {
       this.$router.push(this.nextRouter[index])
+    },
+    routerTo () {
+      this.$router.push('/exhibitor/mustknow')
     }
   }
 }

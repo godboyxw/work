@@ -171,7 +171,7 @@ export default {
         }
       ],
       router1: ['/host', '/servicer', '/exhibitor', '/builder'],
-      router2: ['/producer', '/tickets', '/food', '', '', '/transport', '', '', '/advice', ''],
+      router2: ['/producer', '/tickets', '/food', '', '', '/transport', '', '/sightseeing', '/advice', ''],
       router3: ['/news', ''],
       key: ''
     }

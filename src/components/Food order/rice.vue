@@ -9,9 +9,11 @@
       <div class="calculate">
         <text class="price">¥{{rice.price}}</text>
         <div class="select">
-          <text class="minus">—</text>
+          <text class="icon-minus minus"
+                :style="{fontFamily:'iconfont',color:'#ff5c5c',fontSize:'28px',marginRight:'41px'}">{{"\ue665"}}</text>
           <text class="number">1</text>
-          <text class="add">+</text>
+          <text class="icon-add add"
+                :style="{fontFamily:'iconfont',color:'#ff5c5c',fontSize:'28px',marginLeft:'41px'}">{{"\ue64f"}}</text>
         </div>
       </div>
     </div>
@@ -87,24 +89,6 @@ export default {
 }
 .select {
   flex-direction: row;
-}
-.minus {
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
-  border: 1px solid #ff5c5c;
-  color: #ff5c5c;
-  text-align: center;
-  line-height: 28px;
-}
-.add {
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
-  background: #ff5c5c;
-  color: #ffffff;
-  text-align: center;
-  line-height: 28px;
 }
 .number {
   width: 47px;

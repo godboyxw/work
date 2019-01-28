@@ -21,8 +21,11 @@ import Exhibitor from '@/components/Role/Exhibitor/Exhibitor'
 import ExhibitorExpress from '@/components/Role/Exhibitor/Express'
 import ExhibitorAdsRent from '@/components/Role/Exhibitor/AdsRent'
 import ExhibitorMeetingOrder from '@/components/Role/Exhibitor/MeetingOrder'
+import ExhibitorMustKnow from '@/components/Role/Exhibitor/MustKnow'
+import ExhibitorFoodOrder from '@/components/Role/Exhibitor/FoodOrder'
 import Builder from '@/components/Role/Builder/Builder'
 import BuilderExpress from '@/components/Role/Builder/Express'
+import BuilderBuildGuide from '@/components/Role/Builder/BuildGuide'
 
 import Service from '@/components/Home Page/Service'
 
@@ -54,6 +57,8 @@ import Details from '@/components/Buying Tickets/Details'
 import Advice from '@/components/Advice Feedback/Advice'
 
 import Transport from '@/components/Transportation Check/Transport'
+
+import SightSeeing from '@/components/SightSeeing/SightSeeing'
 
 Vue.use(Router)
 
@@ -165,6 +170,16 @@ module.exports = new Router({
     component: ExhibitorMeetingOrder
   },
   {
+    path: '/exhibitor/mustknow',
+    name: 'ExhibitorMustKnow',
+    component: ExhibitorMustKnow
+  },
+  {
+    path: '/exhibitor/foodorder',
+    name: 'ExhibitorFoodOrder',
+    component: ExhibitorFoodOrder
+  },
+  {
     path: '/builder',
     name: 'Builder',
     component: Builder
@@ -173,6 +188,11 @@ module.exports = new Router({
     path: '/builder/express',
     name: 'BuilderExpress',
     component: BuilderExpress
+  },
+  {
+    path: '/builder/buildguide',
+    name: 'BuilderBuildGuide',
+    component: BuilderBuildGuide
   },
   {
     path: '/producer',
@@ -282,6 +302,11 @@ module.exports = new Router({
     path: '/transport',
     name: 'Transport',
     component: Transport
+  },
+  {
+    path: '/sightSeeing',
+    name: 'SightSeeing',
+    component: SightSeeing
   }
   ]
 })

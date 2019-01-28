@@ -61,14 +61,14 @@ export default {
   font-family: SourceHanSansCN-Medium;
   font-weight: 500;
   color: rgba(53, 53, 53, 1);
-  line-height: 32px;
+  line-height: 34px;
 }
 .location {
   font-size: 24px;
   font-family: SourceHanSansCN-Light;
   font-weight: 300;
   color: rgba(153, 153, 153, 1);
-  line-height: 24px;
+  line-height: 26px;
 }
 .icon-map {
   align-self: center;

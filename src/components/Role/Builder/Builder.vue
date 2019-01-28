@@ -13,8 +13,10 @@
     </div>
     <div class="know">
       <div class="know-wrapper">
-        <text class="know-text1">现场施工指南</text>
-        <text class="know-text2">请搭建商仔细阅读相关规定</text>
+        <div @click="routerTo">
+          <text class="know-text1">现场施工指南</text>
+          <text class="know-text2">请搭建商仔细阅读相关规定</text>
+        </div>
         <image class="know-image"
                src='http://img2.imgtn.bdimg.com/it/u=3020234412,1591358550&fm=26&gp=0.jpg'
                style="width:140px;height:130px;position:absolute;right:64px;bottom:0;" />
@@ -83,6 +85,9 @@ export default {
   methods: {
     push (index) {
       this.$router.push(this.nextRouter[index])
+    },
+    routerTo () {
+      this.$router.push('/builder/buildguide')
     }
   }
 }
