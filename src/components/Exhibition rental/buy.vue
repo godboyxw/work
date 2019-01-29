@@ -21,18 +21,29 @@
       <div class="content-height">
         <text class="height">高度</text>
         <div class="height-selection">
-          <text class="txt1">0.8m~1.0m</text>
-          <text class="txt1">1.0m~1.2m</text>
-          <text class="txt1">1.2m~1.5m</text>
+          <text class="txt1"
+                @click="choose(index)"
+                :class="key1===index? 'active' :''"
+                v-for="(item,index) in height"
+                :key="index">{{item}}</text>
         </div>
       </div>
       <div class="content-count">
         <text class="count">数量</text>
         <div class="count-selection">
-          <text class="txt2">10盆</text>
-          <text class="txt2">20盆</text>
-          <text class="txt2">30盆</text>
-          <text class="txt2">自定义盆数</text>
+          <text class="txt2"
+                @click="select(index)"
+                v-show="!(index===3&&key2===3)"
+                :class="key2===index? 'active' :''"
+                v-for="(item,index) in count"
+                :key="index">{{item}}</text>
+          <input type="text"
+                 placeholder="请输入盆数"
+                 style="placeholder-color: rgba(255, 255, 255, 1);"
+                 class="input active"
+                 ref="input1"
+                 v-model="inputText"
+                 v-if="key2===3" /> {{inputValue}}
         </div>
       </div>
       <div class="confirm">
@@ -45,10 +56,16 @@
 
 <script>
 import { EventBus } from '../../util/vue-bus.js'
+var modal = weex.requireModule('modal')
 export default {
   data () {
     return {
-      block: false
+      block: false,
+      height: ['0.8m~1.0m', '1.0m~1.2m', '1.2m~1.5m'],
+      count: ['10盆', '20盆', '30盆', '自定义盆数'],
+      key1: '',
+      key2: '',
+      inputText: ''
     }
   },
   methods: {
@@ -58,9 +75,43 @@ export default {
       // console.log(1)
     },
     next () {
-      this.$router.push('/shopping')
+      if (this.key1 === '' || this.key2 === '') {
+        modal.toast({
+          message: '请选择高度或者数量!',
+          duration: 2
+        })
+      } else {
+        this.$router.push('/shopping')
+      }
+    },
+    choose (index) {
+      this.key1 = index
+    },
+    select (index) {
+      this.key2 = index
+    }
+    // blur () {
+    //   this.$refs['input1'].value = this.inputText + '盆'
+    // },
+    // focus () {
+    //   this.$refs['input1'].value = ''
+    // }
+  },
+  computed: {
+    // inputValue: {
+    //   get () {
+    //     return this.inputText + '盆'
+    //   }
+    // }
+    inputValue () {
+      return this.inputText + '盆'
     }
   }
+  // mounted () {
+  //   this.$nextTick(() => {
+  //     this.$refs.input1.value = this.inputValue + '盆'
+  //   })
+  // }
 }
 </script>
 
@@ -159,7 +210,6 @@ export default {
   flex-direction: row;
   padding: 0 33px 0 32px;
   align-items: center;
-  padding: ;
 }
 .txt1 {
   width: 160px;
@@ -195,7 +245,8 @@ export default {
   flex-wrap: wrap;
   padding: 0 33px 0 32px;
 }
-.txt2 {
+.txt2,
+.input {
   width: 160px;
   height: 56px;
   margin-right: 81px;
@@ -208,6 +259,10 @@ export default {
   color: rgba(51, 51, 51, 1);
   text-align: center;
   line-height: 56px;
+}
+.input {
+  outline: none;
+  padding: 0;
 }
 .txt2:nth-child(3) {
   margin-right: 0;
@@ -226,6 +281,10 @@ export default {
   font-size: 36px;
   font-family: SourceHanSansCN-Medium;
   font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+.active {
+  background: rgba(29, 141, 243, 1);
   color: rgba(255, 255, 255, 1);
 }
 </style>

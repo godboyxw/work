@@ -59,6 +59,9 @@ import Advice from '@/components/Advice Feedback/Advice'
 import Transport from '@/components/Transportation Check/Transport'
 
 import SightSeeing from '@/components/SightSeeing/SightSeeing'
+import WineShop from '@/components/SightSeeing/WineShop'
+import DeliciousFood from '@/components/SightSeeing/DeliciousFood'
+import Tour from '@/components/SightSeeing/Tour'
 
 Vue.use(Router)
 
@@ -306,7 +309,29 @@ module.exports = new Router({
   {
     path: '/sightSeeing',
     name: 'SightSeeing',
-    component: SightSeeing
+    redirect: '/tour',
+    component: SightSeeing,
+    children: [{
+      path: '/tour',
+      name: 'Tour',
+      component: Tour
+    },
+    {
+      path: '/deliciousfood',
+      name: 'DeliciousFood',
+      component: DeliciousFood
+    },
+    {
+      path: '/wineshop',
+      name: 'WineShop',
+      component: WineShop
+    },
+    {
+      path: '/wineshop',
+      name: 'WineShop',
+      component: WineShop
+    }
+    ]
   }
   ]
 })

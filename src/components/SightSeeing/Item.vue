@@ -1,20 +1,32 @@
 <template>
-  <div class="food-item">
+  <div class="item">
     <div class="image">
-      <image :src="foodItem.src"
+      <image :src="Item.src"
              style="width:200px;height:199px;" />
     </div>
     <div class="info">
-      <text class="title">{{foodItem.title}}</text>
+      <text class="title">{{Item.title}}</text>
       <div class="rating-wrapper">
         <Star class="star"
-              :star="foodItem.star"></Star>
-        <text class="rating">{{foodItem.rating}}</text>
+              :star="Item.star"></Star>
+        <text class="rating">{{Item.rating}}</text>
       </div>
-      <text class="name">{{foodItem.name}}</text>
+      <text class="name"
+            v-if="nameShow">{{Item.name}}</text>
+      <div class="price-container"
+           v-if="priceShow">
+        <text class="dollar">￥</text>
+        <text class="price">{{Item.price}}</text>
+        <text class="at-least"> 起</text>
+      </div>
       <div class="place">
-        <text class="location">{{foodItem.location}}</text>
-        <text class="distance">{{foodItem.distance}}</text>
+        <div class="wrapper">
+          <text class="icon-ear-machine"
+                v-if="iconShow"
+                :style="{fontFamily:'iconfont',fontSize:'30px',color:'#BABABA',marginRight:'8px'}">{{'\ue66a'}}</text>
+          <text class="location">{{Item.location}}</text>
+        </div>
+        <text class="distance">{{Item.distance}}</text>
       </div>
     </div>
   </div>
@@ -27,7 +39,7 @@ export default {
     Star
   },
   props: {
-    foodItem: {
+    Item: {
       type: Object,
       default: () => {
         return {
@@ -36,17 +48,30 @@ export default {
           star: 4.9,
           rating: '4.9分',
           name: '美食街区',
+          price: '1216',
           location: '位于户部巷昙华林',
           distance: '11km'
         }
       }
+    },
+    iconShow: {
+      type: Boolean,
+      default: false
+    },
+    nameShow: {
+      type: Boolean,
+      default: true
+    },
+    priceShow: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
 <style scoped>
-.food-item {
+.item {
   width: 656px;
   height: 256px;
   align-self: center;
@@ -103,10 +128,33 @@ export default {
   font-weight: 400;
   color: rgba(68, 68, 68, 1);
 }
+.price-container {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.price,
+.dollar,
+.at-least {
+  font-family: SourceHanSansCN-Normal;
+  font-weight: 400;
+  color: rgba(215, 84, 80, 1);
+  line-height: 40px;
+}
+.price {
+  font-size: 40px;
+}
+.dollar,
+.at-least {
+  font-size: 24px;
+}
 .place {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.wrapper {
+  flex-direction: row;
 }
 .location,
 .distance {
