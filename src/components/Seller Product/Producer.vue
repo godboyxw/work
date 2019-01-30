@@ -4,7 +4,7 @@
       <div class="bgimg">
         <image style="width:750px;height:360px"
                resize="stretch"
-               src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1720072895.jpg" />
+               src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1750072895.jpg" />
         <div class="icon-box">
           <text class="icon icon-back"
                 :style="{fontFamily:'iconfont',color:'#ffffff',fontSize:'48px'}"

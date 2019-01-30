@@ -156,7 +156,7 @@ export default {
   color: rgba(187, 187, 187, 1);
 }
 .footer {
-  width: 720px;
+  width: 750px;
   height: 110px;
   background: rgba(255, 255, 255, 1);
   align-items: center;

@@ -48,14 +48,43 @@
         </div>
       </div>
       <div class='ads'>
-        <image style='width:100%;height:100%'
+        <slider class="slider"
+                style="width: 672px;height: 160px;"
+                interval="2000"
+                auto-play="true">
+          <div class="frame"
+               style="width: 672px;height: 160px;"
+               v-for="(img,index) in imageList"
+               :key="index">
+            <image class="image"
+                   style="width: 672px;height: 160px;"
+                   resize="stretch"
+                   :src="img"></image>
+          </div>
+        </slider>
+        <text class="slider-icon"
+              :style="{fontFamily:'iconfont',fontSize:'30px',color:'#ffffff'}">{{'\ue648'}}</text>
+        <!-- <image style='width:100%;height:100%'
                src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2045970870,2749198357&fm=27&gp=0.jpg'>
-        </image>
+        </image> -->
       </div>
       <div class='ads'>
-        <image style='width:100%;height:100%'
-               src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2170378782,1000218457&fm=11&gp=0.jpg'>
-        </image>
+        <slider class="slider"
+                style="width: 672px;height: 160px;"
+                interval="2000"
+                auto-play="true">
+          <div class="frame"
+               style="width: 672px;height: 160px;"
+               v-for="(img,index) in imageList"
+               :key="index">
+            <image class="image"
+                   style="width: 672px;height: 160px;"
+                   resize="stretch"
+                   :src="img"></image>
+          </div>
+        </slider>
+        <text class="slider-icon"
+              :style="{fontFamily:'iconfont',fontSize:'30px',color:'#ffffff'}">{{'\ue648'}}</text>
       </div>
       <div class='ads'>
         <image style='width:100%;height:100%'
@@ -173,7 +202,12 @@ export default {
       router1: ['/host', '/servicer', '/exhibitor', '/builder'],
       router2: ['/producer', '/tickets', '/food', '', '', '/transport', '', '/sightseeing', '/advice', ''],
       router3: ['/news', ''],
-      key: ''
+      key: '',
+      imageList: [
+        'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2045970870,2749198357&fm=27&gp=0.jpg',
+        'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=138495137,3040106282&fm=26&gp=0.jpg',
+        'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1743319124.jpg'
+      ]
     }
   },
   methods: {
@@ -340,10 +374,17 @@ export default {
 .ads {
   width: 672px;
   height: 160px;
+  position: relative;
   margin-bottom: 31px;
   border-radius: 20px;
   overflow: hidden;
   align-self: center;
+}
+.slider-icon {
+  position: absolute;
+  right: 20px;
+  top: 65px;
+  z-index: 999;
 }
 .footer {
   flex: 0;

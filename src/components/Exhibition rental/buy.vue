@@ -39,11 +39,12 @@
                 :key="index">{{item}}</text>
           <input type="text"
                  placeholder="请输入盆数"
+                 autofocus=true
                  style="placeholder-color: rgba(255, 255, 255, 1);"
                  class="input active"
                  ref="input1"
-                 v-model="inputText"
-                 v-if="key2===3" /> {{inputValue}}
+                 v-if="key2===3"
+                 v-model="inputText" />
         </div>
       </div>
       <div class="confirm">
@@ -65,7 +66,7 @@ export default {
       count: ['10盆', '20盆', '30盆', '自定义盆数'],
       key1: '',
       key2: '',
-      inputText: ''
+      inputText: '' + '盆'
     }
   },
   methods: {
@@ -96,17 +97,22 @@ export default {
     // focus () {
     //   this.$refs['input1'].value = ''
     // }
-  },
-  computed: {
-    // inputValue: {
-    //   get () {
-    //     return this.inputText + '盆'
-    //   }
+    // setSelectionRange () {
+    //   console.log(this.$refs['input1'])
+    //   console.log(this.$refs.input1)
+    //   this.$refs['input1'].setSelectionRange(0)
     // }
-    inputValue () {
-      return this.inputText + '盆'
-    }
   }
+  // computed: {
+  // inputValue: {
+  //   get () {
+  //     return this.inputText + '盆'
+  //   }
+  // }
+  // inputValue () {
+  //   return this.inputText + '盆'
+  // }
+  // }
   // mounted () {
   //   this.$nextTick(() => {
   //     this.$refs.input1.value = this.inputValue + '盆'

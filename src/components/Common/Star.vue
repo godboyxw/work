@@ -3,7 +3,7 @@
     <div class="item"
          v-for="(item,index) in 5"
          :key="index">
-      <text :style="{fontFamily:'iconfont',fontSize:'16px',color:(index < Math.round(star) ? '#FF720E' : '')}">{{'\ue667'}}</text>
+      <text :style="{fontFamily:'iconfont',fontSize:'16px',color:(index < Math.round(star) ? '#FF750E' : '')}">{{'\ue667'}}</text>
     </div>
   </div>
 </template>

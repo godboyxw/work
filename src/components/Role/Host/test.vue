@@ -41,7 +41,7 @@ export default {
     // dd.config({
     //   'agentId': '219674049', // 必填，微应用ID
     //   'corpId': 'dinga1db62e064be442f35c2f4657eb6378f', // 必填，企业ID
-    //   'timeStamp': '1548399720047', // 必填，生成签名的时间戳
+    //   'timeStamp': '1548399750047', // 必填，生成签名的时间戳
     //   'nonceStr': '', // 必填，生成签名的随机串
     //   'signature': '', // 必填，签名
     //   'type': 0 / 1, // 选填，0表示微应用的jsapi，1表示服务窗的jsapi，不填默认为0。该参数从dingtalk.js的0.8.3版本开始支持

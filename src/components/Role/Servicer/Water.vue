@@ -27,7 +27,7 @@
         <text class="title">动力电源</text>
         <div class="card-btn-wrapper">
           <cardBtn v-for="(item,index) in powerArr"
-                   style="margin-bottom:25px"
+                   style="margin-bottom:25                                                                                         px"
                    :key="index"
                    :width="width"
                    :choosenShow="choosenShow"
